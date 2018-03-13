@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leftsuper.dao.InOutHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.leftsuper.model.InOutHistory">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="USER_ID" jdbcType="INTEGER" property="userId" />
+    <result column="GOODS_ID" jdbcType="INTEGER" property="goodsId" />
+    <result column="COUNT" jdbcType="DOUBLE" property="count" />
+    <result column="TIME" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+</mapper>

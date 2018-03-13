@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leftsuper.dao.OrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.leftsuper.model.OrderItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="BIGINT" property="id" />
+    <result column="ORDER_ID" jdbcType="BIGINT" property="orderId" />
+    <result column="GOODS_ID" jdbcType="INTEGER" property="goodsId" />
+    <result column="PRICE" jdbcType="DOUBLE" property="price" />
+    <result column="NUMBER" jdbcType="DOUBLE" property="number" />
+  </resultMap>
+</mapper>
