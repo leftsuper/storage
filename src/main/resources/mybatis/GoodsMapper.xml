@@ -15,10 +15,11 @@
     <result column="QUALITY" jdbcType="VARCHAR" property="quality" />
     <result column="INVENTORY" jdbcType="DOUBLE" property="inventory" />
     <result column="THICKNESS" jdbcType="VARCHAR" property="thickness" />
+    <result column="DELETED" jdbcType="BIT" property="deleted" />
   </resultMap>
   <update id="updateById">
     <foreach collection="goodsList" item="goods">
-      UPDATE goods set INVENTORY = #{goods.inventory} where ID = #{goods.id};
+      UPDATE goods set INVENTORY = #{goods.addCount} where ID = #{goods.id};
     </foreach>
   </update>
 </mapper>
