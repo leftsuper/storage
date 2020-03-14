@@ -3,11 +3,13 @@
 <mapper namespace="com.leftsuper.dao.OrderDetailMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.OrderDetail">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
     <id column="ID" jdbcType="BIGINT" property="id" />
     <result column="CUSTOMER_ID" jdbcType="INTEGER" property="customerId" />
     <result column="REMARK" jdbcType="VARCHAR" property="remark" />
     <result column="STATUS" jdbcType="TINYINT" property="status" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
 </mapper>

@@ -3,12 +3,14 @@
 <mapper namespace="com.leftsuper.dao.InOutHistoryMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.InOutHistory">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="USER_ID" jdbcType="INTEGER" property="userId" />
-    <result column="GOODS_ID" jdbcType="INTEGER" property="goodsId" />
-    <result column="COUNT" jdbcType="DOUBLE" property="count" />
-    <result column="TIME" jdbcType="TIMESTAMP" property="time" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="count" jdbcType="DOUBLE" property="count" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
 </mapper>

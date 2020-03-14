@@ -3,13 +3,16 @@
 <mapper namespace="com.leftsuper.dao.CustomerMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.Customer">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
-    <id column="ID" jdbcType="INTEGER" property="id" />
-    <result column="NAME" jdbcType="VARCHAR" property="name" />
-    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
-    <result column="TEL" jdbcType="VARCHAR" property="tel" />
-    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
 
 </mapper>

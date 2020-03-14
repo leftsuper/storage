@@ -1,6 +1,7 @@
 package com.leftsuper.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "order_item")
@@ -9,39 +10,48 @@ public class OrderItem implements Serializable {
      * 主键ID
      */
     @Id
-    @Column(name = "ID")
     private Long id;
 
     /**
      * 订单ID
      */
-    @Column(name = "ORDER_ID")
+    @Column(name = "order_id")
     private Long orderId;
 
     /**
      * 商品ID
      */
-    @Column(name = "GOODS_ID")
+    @Column(name = "goods_id")
     private Integer goodsId;
 
     /**
      * 价格
      */
-    @Column(name = "PRICE")
     private Double price;
 
     /**
      * 数量
      */
-    @Column(name = "NUMBER")
     private Double number;
+
+    /**
+     * 逻辑删除 0-否 1-是
+     */
+    @Column(name = "is_delete")
+    private Boolean isDelete;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 获取主键ID
      *
-     * @return ID - 主键ID
+     * @return id - 主键ID
      */
     public Long getId() {
         return id;
@@ -59,7 +69,7 @@ public class OrderItem implements Serializable {
     /**
      * 获取订单ID
      *
-     * @return ORDER_ID - 订单ID
+     * @return order_id - 订单ID
      */
     public Long getOrderId() {
         return orderId;
@@ -77,7 +87,7 @@ public class OrderItem implements Serializable {
     /**
      * 获取商品ID
      *
-     * @return GOODS_ID - 商品ID
+     * @return goods_id - 商品ID
      */
     public Integer getGoodsId() {
         return goodsId;
@@ -95,7 +105,7 @@ public class OrderItem implements Serializable {
     /**
      * 获取价格
      *
-     * @return PRICE - 价格
+     * @return price - 价格
      */
     public Double getPrice() {
         return price;
@@ -113,7 +123,7 @@ public class OrderItem implements Serializable {
     /**
      * 获取数量
      *
-     * @return NUMBER - 数量
+     * @return number - 数量
      */
     public Double getNumber() {
         return number;
@@ -128,6 +138,42 @@ public class OrderItem implements Serializable {
         this.number = number;
     }
 
+    /**
+     * 获取逻辑删除 0-否 1-是
+     *
+     * @return is_delete - 逻辑删除 0-否 1-是
+     */
+    public Boolean getIsDelete() {
+        return isDelete;
+    }
+
+    /**
+     * 设置逻辑删除 0-否 1-是
+     *
+     * @param isDelete 逻辑删除 0-否 1-是
+     */
+    public void setIsDelete(Boolean isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,6 +185,8 @@ public class OrderItem implements Serializable {
         sb.append(", goodsId=").append(goodsId);
         sb.append(", price=").append(price);
         sb.append(", number=").append(number);
+        sb.append(", isDelete=").append(isDelete);
+        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
@@ -160,7 +208,9 @@ public class OrderItem implements Serializable {
             && (this.getOrderId() == null ? other.getOrderId() == null : this.getOrderId().equals(other.getOrderId()))
             && (this.getGoodsId() == null ? other.getGoodsId() == null : this.getGoodsId().equals(other.getGoodsId()))
             && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice()))
-            && (this.getNumber() == null ? other.getNumber() == null : this.getNumber().equals(other.getNumber()));
+            && (this.getNumber() == null ? other.getNumber() == null : this.getNumber().equals(other.getNumber()))
+            && (this.getIsDelete() == null ? other.getIsDelete() == null : this.getIsDelete().equals(other.getIsDelete()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -172,6 +222,8 @@ public class OrderItem implements Serializable {
         result = prime * result + ((getGoodsId() == null) ? 0 : getGoodsId().hashCode());
         result = prime * result + ((getPrice() == null) ? 0 : getPrice().hashCode());
         result = prime * result + ((getNumber() == null) ? 0 : getNumber().hashCode());
+        result = prime * result + ((getIsDelete() == null) ? 0 : getIsDelete().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 }

@@ -3,12 +3,12 @@
 <mapper namespace="com.leftsuper.dao.StorageChangeLogMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.StorageChangeLog">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="CLASS_NAME" jdbcType="VARCHAR" property="className" />
-    <result column="MODEL" jdbcType="VARCHAR" property="model" />
-    <result column="OPERATOR" jdbcType="INTEGER" property="operator" />
-    <result column="TIME" jdbcType="TIMESTAMP" property="time" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="model" jdbcType="VARCHAR" property="model" />
+    <result column="operator" jdbcType="INTEGER" property="operator" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
   </resultMap>
 </mapper>

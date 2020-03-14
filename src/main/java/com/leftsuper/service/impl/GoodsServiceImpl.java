@@ -63,7 +63,7 @@ public class GoodsServiceImpl implements GoodsService {
 //			goodsMapper.subInventory(goodsList);
 //		}
 
-		goodsMapper.updateById(goodsList);
+//		goodsMapper.updateById(goodsList);
 	}
 
 }

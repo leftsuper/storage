@@ -10,31 +10,27 @@ public class StorageChangeLog implements Serializable {
      * 主键ID
      */
     @Id
-    @Column(name = "ID")
     private Long id;
 
     /**
      * 实体类
      */
-    @Column(name = "CLASS_NAME")
+    @Column(name = "class_name")
     private String className;
 
     /**
      * 实体json
      */
-    @Column(name = "MODEL")
     private String model;
 
     /**
      * 操作者
      */
-    @Column(name = "OPERATOR")
     private Integer operator;
 
     /**
      * 操作时间
      */
-    @Column(name = "TIME")
     private Date time;
 
     private static final long serialVersionUID = 1L;
@@ -42,7 +38,7 @@ public class StorageChangeLog implements Serializable {
     /**
      * 获取主键ID
      *
-     * @return ID - 主键ID
+     * @return id - 主键ID
      */
     public Long getId() {
         return id;
@@ -60,7 +56,7 @@ public class StorageChangeLog implements Serializable {
     /**
      * 获取实体类
      *
-     * @return CLASS_NAME - 实体类
+     * @return class_name - 实体类
      */
     public String getClassName() {
         return className;
@@ -78,7 +74,7 @@ public class StorageChangeLog implements Serializable {
     /**
      * 获取实体json
      *
-     * @return MODEL - 实体json
+     * @return model - 实体json
      */
     public String getModel() {
         return model;
@@ -96,7 +92,7 @@ public class StorageChangeLog implements Serializable {
     /**
      * 获取操作者
      *
-     * @return OPERATOR - 操作者
+     * @return operator - 操作者
      */
     public Integer getOperator() {
         return operator;
@@ -114,7 +110,7 @@ public class StorageChangeLog implements Serializable {
     /**
      * 获取操作时间
      *
-     * @return TIME - 操作时间
+     * @return time - 操作时间
      */
     public Date getTime() {
         return time;

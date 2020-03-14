@@ -1,5 +1,4 @@
 server:
-  port: 8181
   servlet:
     context-path: /storage
 
@@ -11,21 +10,31 @@ spring:
         password: 123456
         # 使用druid数据源
         driver-class-name: com.mysql.jdbc.Driver
-        filters: stat
-        maxActive: 20
-        initialSize: 1
-        maxWait: 6000
-        minIdle: 1
-        timeBetweenEvictionRunsMillis: 6000
-        minEvictableIdleTimeMillis: 30000
-        validationQuery: select 'x'
-        testWhileIdle: true
-        testOnBorrow: false
-        testOnReturn: false
-        poolPreparedStatements: true
-        maxOpenPreparedStatements: 20
+#        filters: stat
+#        maxActive: 20
+#        initialSize: 1
+#        maxWait: 6000
+#        minIdle: 1
+#        timeBetweenEvictionRunsMillis: 6000
+#        minEvictableIdleTimeMillis: 30000
+#        validationQuery: select 'x'
+#        testWhileIdle: true
+#        testOnBorrow: false
+#        testOnReturn: false
+#        poolPreparedStatements: true
+#        maxOpenPreparedStatements: 20
     application:
       name: storage
+#    freemarker:
+#      template-loader-path: classpath:/templates
+#      cache: false
+#      charset: UTF-8
+#      check-template-location: true
+#      content-type: text/html
+#      expose-request-attributes: true
+#      expose-session-attributes: true
+#      request-context-attribute: request
+#      suffix: .ftl
 
 mybatis:
   mapper-locations: classpath:mybatis/*.xml

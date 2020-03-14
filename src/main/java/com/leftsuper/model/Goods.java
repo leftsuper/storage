@@ -1,6 +1,7 @@
 package com.leftsuper.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 public class Goods implements Serializable {
@@ -8,69 +9,71 @@ public class Goods implements Serializable {
      * 主键ID
      */
     @Id
-    @Column(name = "ID")
     private Integer id;
 
     /**
      * 姓名
      */
-    @Column(name = "NAME")
     private String name;
 
     /**
      * 单位
      */
-    @Column(name = "UNIT")
     private String unit;
 
     /**
      * 分类
      */
-    @Column(name = "CLASSIFY")
     private String classify;
 
     /**
      * 颜色
      */
-    @Column(name = "COLOR")
     private String color;
 
     /**
      * 宽度
      */
-    @Column(name = "WIDTH")
     private String width;
 
     /**
      * 高度
      */
-    @Column(name = "HEIGHT")
     private String height;
 
     /**
      * 质量
      */
-    @Column(name = "QUALITY")
     private String quality;
 
     /**
      * 库存
      */
-    @Column(name = "INVENTORY")
     private Double inventory;
 
     /**
      * 厚度
      */
-    @Column(name = "THICKNESS")
     private String thickness;
+
+    /**
+     * 逻辑删除 0-否 1-是
+     */
+    @Column(name = "is_delete")
+    private Boolean isDelete;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 获取主键ID
      *
-     * @return ID - 主键ID
+     * @return id - 主键ID
      */
     public Integer getId() {
         return id;
@@ -88,7 +91,7 @@ public class Goods implements Serializable {
     /**
      * 获取姓名
      *
-     * @return NAME - 姓名
+     * @return name - 姓名
      */
     public String getName() {
         return name;
@@ -106,7 +109,7 @@ public class Goods implements Serializable {
     /**
      * 获取单位
      *
-     * @return UNIT - 单位
+     * @return unit - 单位
      */
     public String getUnit() {
         return unit;
@@ -124,7 +127,7 @@ public class Goods implements Serializable {
     /**
      * 获取分类
      *
-     * @return CLASSIFY - 分类
+     * @return classify - 分类
      */
     public String getClassify() {
         return classify;
@@ -142,7 +145,7 @@ public class Goods implements Serializable {
     /**
      * 获取颜色
      *
-     * @return COLOR - 颜色
+     * @return color - 颜色
      */
     public String getColor() {
         return color;
@@ -160,7 +163,7 @@ public class Goods implements Serializable {
     /**
      * 获取宽度
      *
-     * @return WIDTH - 宽度
+     * @return width - 宽度
      */
     public String getWidth() {
         return width;
@@ -178,7 +181,7 @@ public class Goods implements Serializable {
     /**
      * 获取高度
      *
-     * @return HEIGHT - 高度
+     * @return height - 高度
      */
     public String getHeight() {
         return height;
@@ -196,7 +199,7 @@ public class Goods implements Serializable {
     /**
      * 获取质量
      *
-     * @return QUALITY - 质量
+     * @return quality - 质量
      */
     public String getQuality() {
         return quality;
@@ -214,7 +217,7 @@ public class Goods implements Serializable {
     /**
      * 获取库存
      *
-     * @return INVENTORY - 库存
+     * @return inventory - 库存
      */
     public Double getInventory() {
         return inventory;
@@ -232,7 +235,7 @@ public class Goods implements Serializable {
     /**
      * 获取厚度
      *
-     * @return THICKNESS - 厚度
+     * @return thickness - 厚度
      */
     public String getThickness() {
         return thickness;
@@ -245,6 +248,42 @@ public class Goods implements Serializable {
      */
     public void setThickness(String thickness) {
         this.thickness = thickness;
+    }
+
+    /**
+     * 获取逻辑删除 0-否 1-是
+     *
+     * @return is_delete - 逻辑删除 0-否 1-是
+     */
+    public Boolean getIsDelete() {
+        return isDelete;
+    }
+
+    /**
+     * 设置逻辑删除 0-否 1-是
+     *
+     * @param isDelete 逻辑删除 0-否 1-是
+     */
+    public void setIsDelete(Boolean isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
@@ -263,6 +302,8 @@ public class Goods implements Serializable {
         sb.append(", quality=").append(quality);
         sb.append(", inventory=").append(inventory);
         sb.append(", thickness=").append(thickness);
+        sb.append(", isDelete=").append(isDelete);
+        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
@@ -289,7 +330,9 @@ public class Goods implements Serializable {
             && (this.getHeight() == null ? other.getHeight() == null : this.getHeight().equals(other.getHeight()))
             && (this.getQuality() == null ? other.getQuality() == null : this.getQuality().equals(other.getQuality()))
             && (this.getInventory() == null ? other.getInventory() == null : this.getInventory().equals(other.getInventory()))
-            && (this.getThickness() == null ? other.getThickness() == null : this.getThickness().equals(other.getThickness()));
+            && (this.getThickness() == null ? other.getThickness() == null : this.getThickness().equals(other.getThickness()))
+            && (this.getIsDelete() == null ? other.getIsDelete() == null : this.getIsDelete().equals(other.getIsDelete()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -306,6 +349,8 @@ public class Goods implements Serializable {
         result = prime * result + ((getQuality() == null) ? 0 : getQuality().hashCode());
         result = prime * result + ((getInventory() == null) ? 0 : getInventory().hashCode());
         result = prime * result + ((getThickness() == null) ? 0 : getThickness().hashCode());
+        result = prime * result + ((getIsDelete() == null) ? 0 : getIsDelete().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 }

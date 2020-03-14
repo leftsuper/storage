@@ -3,23 +3,19 @@
 <mapper namespace="com.leftsuper.dao.GoodsMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.Goods">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
-    <id column="ID" jdbcType="INTEGER" property="id" />
-    <result column="NAME" jdbcType="VARCHAR" property="name" />
-    <result column="UNIT" jdbcType="VARCHAR" property="unit" />
-    <result column="CLASSIFY" jdbcType="VARCHAR" property="classify" />
-    <result column="COLOR" jdbcType="VARCHAR" property="color" />
-    <result column="WIDTH" jdbcType="VARCHAR" property="width" />
-    <result column="HEIGHT" jdbcType="VARCHAR" property="height" />
-    <result column="QUALITY" jdbcType="VARCHAR" property="quality" />
-    <result column="INVENTORY" jdbcType="DOUBLE" property="inventory" />
-    <result column="THICKNESS" jdbcType="VARCHAR" property="thickness" />
-    <result column="DELETED" jdbcType="BIT" property="deleted" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="unit" jdbcType="VARCHAR" property="unit" />
+    <result column="classify" jdbcType="VARCHAR" property="classify" />
+    <result column="color" jdbcType="VARCHAR" property="color" />
+    <result column="width" jdbcType="VARCHAR" property="width" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="quality" jdbcType="VARCHAR" property="quality" />
+    <result column="inventory" jdbcType="DOUBLE" property="inventory" />
+    <result column="thickness" jdbcType="VARCHAR" property="thickness" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
-  <update id="updateById">
-    <foreach collection="goodsList" item="goods">
-      UPDATE goods set INVENTORY = #{goods.addCount} where ID = #{goods.id};
-    </foreach>
-  </update>
 </mapper>

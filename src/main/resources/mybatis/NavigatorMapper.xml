@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leftsuper.dao.NavigatorMapper">
+  <resultMap id="BaseResultMap" type="com.leftsuper.model.Navigator">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="display" jdbcType="VARCHAR" property="display" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <select id="selectCountGroupByParentId" resultType="java.lang.Integer">
+    SELECT count(1) FROM (SELECT count(1) FROM navigator GROUP BY parent_id) navigatorCount;
+  </select>
+</mapper>

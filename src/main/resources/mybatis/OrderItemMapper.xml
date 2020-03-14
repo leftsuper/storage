@@ -3,12 +3,14 @@
 <mapper namespace="com.leftsuper.dao.OrderItemMapper">
   <resultMap id="BaseResultMap" type="com.leftsuper.model.OrderItem">
     <!--
-      WARNING - @mbg.generated
+      WARNING - @mbggenerated
     -->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="ORDER_ID" jdbcType="BIGINT" property="orderId" />
-    <result column="GOODS_ID" jdbcType="INTEGER" property="goodsId" />
-    <result column="PRICE" jdbcType="DOUBLE" property="price" />
-    <result column="NUMBER" jdbcType="DOUBLE" property="number" />
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="number" jdbcType="DOUBLE" property="number" />
+    <result column="is_delete" jdbcType="BIT" property="isDelete" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
 </mapper>

@@ -1,6 +1,7 @@
 package com.leftsuper.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 public class Customer implements Serializable {
@@ -8,39 +9,51 @@ public class Customer implements Serializable {
      * 主键ID
      */
     @Id
-    @Column(name = "ID")
     private Integer id;
 
     /**
      * 姓名
      */
-    @Column(name = "NAME")
     private String name;
 
     /**
      * 地址
      */
-    @Column(name = "ADDRESS")
     private String address;
 
     /**
      * 电话
      */
-    @Column(name = "TEL")
     private String tel;
 
     /**
      * 手机
      */
-    @Column(name = "PHONE")
     private String phone;
+
+    /**
+     * 公司
+     */
+    private String company;
+
+    /**
+     * 逻辑删除 0-否 1-是
+     */
+    @Column(name = "is_delete")
+    private Boolean isDelete;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 
     /**
      * 获取主键ID
      *
-     * @return ID - 主键ID
+     * @return id - 主键ID
      */
     public Integer getId() {
         return id;
@@ -58,7 +71,7 @@ public class Customer implements Serializable {
     /**
      * 获取姓名
      *
-     * @return NAME - 姓名
+     * @return name - 姓名
      */
     public String getName() {
         return name;
@@ -76,7 +89,7 @@ public class Customer implements Serializable {
     /**
      * 获取地址
      *
-     * @return ADDRESS - 地址
+     * @return address - 地址
      */
     public String getAddress() {
         return address;
@@ -94,7 +107,7 @@ public class Customer implements Serializable {
     /**
      * 获取电话
      *
-     * @return TEL - 电话
+     * @return tel - 电话
      */
     public String getTel() {
         return tel;
@@ -112,7 +125,7 @@ public class Customer implements Serializable {
     /**
      * 获取手机
      *
-     * @return PHONE - 手机
+     * @return phone - 手机
      */
     public String getPhone() {
         return phone;
@@ -127,6 +140,60 @@ public class Customer implements Serializable {
         this.phone = phone;
     }
 
+    /**
+     * 获取公司
+     *
+     * @return company - 公司
+     */
+    public String getCompany() {
+        return company;
+    }
+
+    /**
+     * 设置公司
+     *
+     * @param company 公司
+     */
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    /**
+     * 获取逻辑删除 0-否 1-是
+     *
+     * @return is_delete - 逻辑删除 0-否 1-是
+     */
+    public Boolean getIsDelete() {
+        return isDelete;
+    }
+
+    /**
+     * 设置逻辑删除 0-否 1-是
+     *
+     * @param isDelete 逻辑删除 0-否 1-是
+     */
+    public void setIsDelete(Boolean isDelete) {
+        this.isDelete = isDelete;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,6 +205,9 @@ public class Customer implements Serializable {
         sb.append(", address=").append(address);
         sb.append(", tel=").append(tel);
         sb.append(", phone=").append(phone);
+        sb.append(", company=").append(company);
+        sb.append(", isDelete=").append(isDelete);
+        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
@@ -159,7 +229,10 @@ public class Customer implements Serializable {
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
             && (this.getTel() == null ? other.getTel() == null : this.getTel().equals(other.getTel()))
-            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()));
+            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+            && (this.getCompany() == null ? other.getCompany() == null : this.getCompany().equals(other.getCompany()))
+            && (this.getIsDelete() == null ? other.getIsDelete() == null : this.getIsDelete().equals(other.getIsDelete()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -171,6 +244,9 @@ public class Customer implements Serializable {
         result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
         result = prime * result + ((getTel() == null) ? 0 : getTel().hashCode());
         result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
+        result = prime * result + ((getCompany() == null) ? 0 : getCompany().hashCode());
+        result = prime * result + ((getIsDelete() == null) ? 0 : getIsDelete().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 }
