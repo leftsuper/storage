@@ -80,9 +80,9 @@ DROP TABLE IF EXISTS `navigator`;
 CREATE TABLE `navigator` (
   `id` int(11) NOT NULL COMMENT 'id',
   `name` varchar(255) NOT NULL COMMENT '名字',
-  `display` varchar(255) NOT NULL COMMENT '显示名称',
+  `text` varchar(255) NOT NULL COMMENT '显示名称',
   `url` varchar(255) DEFAULT NULL COMMENT '跳转地址',
-  `icon` varchar(255) DEFAULT NULL COMMENT '图标',
+  `iconCls` varchar(255) DEFAULT NULL COMMENT '图标',
   `parent_id` int(11) DEFAULT NULL COMMENT '父级ID',
   `is_delete` bit(1) DEFAULT b'0' COMMENT '逻辑删除 0-否 1-是',
   `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
@@ -92,12 +92,12 @@ CREATE TABLE `navigator` (
 -- ----------------------------
 -- Records of navigator
 -- ----------------------------
-INSERT INTO `navigator` VALUES ('10100', 'storage', '仓储', null, 'icon-storage', null, b'1', current_timestamp);
-INSERT INTO `navigator` VALUES ('10101', 'inventory', '库存', null, 'icon-shift', '10100', b'1', current_timestamp);
-INSERT INTO `navigator` VALUES ('10200', 'sale', '销售', null, 'icon-grid', null, b'1', current_timestamp);
-INSERT INTO `navigator` VALUES ('10201', 'order', '订单', null, 'icon-application', '10200', b'1', current_timestamp);
-INSERT INTO `navigator` VALUES ('10202', 'customer', '顾客', null, 'icon-user', '10200', b'1', current_timestamp);
-INSERT INTO `navigator` VALUES ('10300', 'statistics', '统计', null, 'icon-chart', null, b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10100', 'storage', '仓储', null, 'iconCls-storage', null, b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10101', 'inventory', '库存', null, 'iconCls-shift', '10100', b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10200', 'sale', '销售', null, 'iconCls-grid', null, b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10201', 'order', '订单', null, 'iconCls-application', '10200', b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10202', 'customer', '顾客', null, 'iconCls-user', '10200', b'1', current_timestamp);
+INSERT INTO `navigator` VALUES ('10300', 'statistics', '统计', null, 'iconCls-chart', null, b'1', current_timestamp);
 
 -- ----------------------------
 -- Table structure for order_detail

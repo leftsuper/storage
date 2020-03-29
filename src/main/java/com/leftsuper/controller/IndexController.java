@@ -1,5 +1,6 @@
 package com.leftsuper.controller;
 
+import com.google.gson.Gson;
 import com.leftsuper.constant.ModelViewKey;
 import com.leftsuper.service.NavigatorService;
 import com.leftsuper.vo.NavigatorVo;
@@ -17,8 +18,8 @@ import java.util.List;
 @Controller
 public class IndexController {
 
-//    @Autowired
-//    private NavigatorService navigatorService;
+    @Autowired
+    private NavigatorService navigatorService;
 
     @RequestMapping("/login")
     public String login(){
@@ -27,10 +28,11 @@ public class IndexController {
     }
 
     @RequestMapping("/index")
-    public String index(/*ModelMap modelMap*/){
-        /*List<NavigatorVo> navigatorVoList = navigatorService.getNavigatorList();
-        modelMap.addAttribute(ModelViewKey.NAVIGATOR, navigatorVoList);*/
-
+    public String index(ModelMap modelMap){
+        List<NavigatorVo> navigatorVoList = navigatorService.getNavigatorList();
+        Gson gson = new Gson();
+        String navigatorData = gson.toJson(navigatorVoList);
+        modelMap.addAttribute(ModelViewKey.NAVIGATOR, navigatorData.replaceAll("\"", "'"));
         return "index";
     }
 

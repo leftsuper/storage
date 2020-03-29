@@ -24,12 +24,12 @@ public class NavigatorVo {
     /**
      * 显示名称
      */
-    private String display;
+    private String text;
 
     /**
      * 图标
      */
-    private String icon;
+    private String iconCls;
 
     /**
      * 跳转地址
@@ -44,7 +44,7 @@ public class NavigatorVo {
     /**
      * 导航栏
      */
-    private List<NavigatorVo> navigatorVoList;
+    private List<NavigatorVo> children;
 
     public NavigatorVo() {
     }
@@ -52,9 +52,9 @@ public class NavigatorVo {
     public NavigatorVo(Navigator navigator) {
         this.id = navigator.getId();
         this.name = navigator.getName();
-        this.display = navigator.getDisplay();
+        this.text = navigator.getDisplay();
         this.url = navigator.getUrl();
-        this.icon = navigator.getIcon();
+        this.iconCls = navigator.getIcon();
         this.parentId = navigator.getParentId();
     }
 
@@ -74,12 +74,12 @@ public class NavigatorVo {
         this.name = name;
     }
 
-    public String getDisplay() {
-        return display;
+    public String getText() {
+        return text;
     }
 
-    public void setDisplay(String display) {
-        this.display = display;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getUrl() {
@@ -98,26 +98,26 @@ public class NavigatorVo {
         this.parentId = parentId;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getIconCls() {
+        return iconCls;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setIconCls(String iconCls) {
+        this.iconCls = iconCls;
     }
 
-    public List<NavigatorVo> getNavigatorVoList() {
-        return navigatorVoList;
+    public List<NavigatorVo> getChildren() {
+        return children;
     }
 
-    public void setNavigatorVoList(List<NavigatorVo> navigatorVoList) {
-        this.navigatorVoList = navigatorVoList;
+    public void setChildren(List<NavigatorVo> children) {
+        this.children = children;
     }
 
     public void addNavigatorVo(NavigatorVo navigatorVo) {
-        if (CollectionUtils.isEmpty(navigatorVoList)) {
-            navigatorVoList = new ArrayList<>();
+        if (CollectionUtils.isEmpty(children)) {
+            children = new ArrayList<>();
         }
-        navigatorVoList.add(navigatorVo);
+        children.add(navigatorVo);
     }
 }

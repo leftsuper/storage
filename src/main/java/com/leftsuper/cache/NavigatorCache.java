@@ -31,11 +31,11 @@ public class NavigatorCache {
 
     private Map<Integer, List<Navigator>> childrenNavigatorMap;
 
-//    @Autowired
-//    public NavigatorCache ( NavigatorMapper navigatorMapper) {
-//        this.navigatorMapper = navigatorMapper;
-//        this.init();
-//    }
+    @Autowired
+    public NavigatorCache ( NavigatorMapper navigatorMapper) {
+        this.navigatorMapper = navigatorMapper;
+        this.init();
+    }
 
     private void init() {
         Example example = new Example(Navigator.class);

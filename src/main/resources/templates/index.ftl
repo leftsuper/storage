@@ -9,7 +9,6 @@
     <meta http-equiv="description" content="出入库管理系统">
     <link rel="stylesheet" type="text/css" href="css/easyui.css" />
     <link rel="stylesheet" type="text/css" href="css/icon.css" />
-    <link rel="stylesheet" type="text/css" href="css/sidemenu_style.css">
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
@@ -35,56 +34,12 @@
 <body class="easyui-layout">
     <div id="header" data-options="region:'north'" ></div>
     <div id="navigator" data-options="region:'west'" title="导航栏">
-        <#--<div id="sm" class="easyui-sidemenu" data-options="data:data"></div>
+        <div id="sm" class="easyui-sidemenu" data-options="onSelect:open,data:[{'id':10100,'name':'storage','text':'仓储','iconCls':'icon-save','url':'','children':[{'id':10101,'name':'inventory','text':'库存','iconCls':'icon-shift','url':'/storage/inventory','parentId':10100}]},{'id':10200,'name':'sale','text':'销售','iconCls':'icon-grid','children':[{'id':10201,'name':'order','text':'订单','iconCls':'icon-application','url':'/sale/order','parentId':10200},{'id':10202,'name':'customer','text':'顾客','iconCls':'icon-user','url':'/sale/customer','parentId':10200}]},{'id':10300,'name':'statistics','text':'统计','iconCls':'icon-chart'}]" style="width: 100%"></div>
         <script type="text/javascript">
-            var data = [{
-                text: 'Forms',
-                iconCls: 'icon-save',
-                state: 'open',
-                children: [{
-                    text: 'Form Element'
-                },{
-                    text: 'Wizard'
-                },{
-                    text: 'File Upload'
-                }]
-            },{
-                text: 'Mail',
-                iconCls: 'aaa',
-                selected: true,
-                children: [{
-                    text: 'Inbox'
-                },{
-                    text: 'Sent'
-                },{
-                    text: 'Trash',
-                    children: [{
-                        text: 'Item1'
-                    },{
-                        text: 'Item2'
-                    }]
-                }]
-            },{
-                text: 'Layout',
-                iconCls: 'bbb',
-                children: [{
-                    text: 'Panel'
-                },{
-                    text: 'Accordion'
-                },{
-                    text: 'Tabs'
-                }]
-            }];
-
-            function toggle(){
-                var opts = $('#sm').sidemenu('options');
-                $('#sm').sidemenu(opts.collapsed ? 'expand' : 'collapse');
-                opts = $('#sm').sidemenu('options');
-                $('#sm').sidemenu('resize', {
-                    width: opts.collapsed ? 60 : 200
-                })
+            function open(item){
+                alert(item.url)
             }
-        </script>-->
+        </script>
     </div>
     <div id="section" data-options="region:'center'"></div>
     <div id="footer" data-options="region:'south'">

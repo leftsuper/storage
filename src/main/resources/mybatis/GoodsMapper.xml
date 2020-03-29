@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.leftsuper.dao.GoodsMapper">
-  <resultMap id="BaseResultMap" type="com.leftsuper.model.Goods">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leftsuper.dao.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.leftsuper.model.Goods" >
     <!--
       WARNING - @mbggenerated
     -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="unit" jdbcType="VARCHAR" property="unit" />
-    <result column="classify" jdbcType="VARCHAR" property="classify" />
-    <result column="color" jdbcType="VARCHAR" property="color" />
-    <result column="width" jdbcType="VARCHAR" property="width" />
-    <result column="height" jdbcType="VARCHAR" property="height" />
-    <result column="quality" jdbcType="VARCHAR" property="quality" />
-    <result column="inventory" jdbcType="DOUBLE" property="inventory" />
-    <result column="thickness" jdbcType="VARCHAR" property="thickness" />
-    <result column="is_delete" jdbcType="BIT" property="isDelete" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="classify" property="classify" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="width" property="width" jdbcType="VARCHAR" />
+    <result column="height" property="height" jdbcType="VARCHAR" />
+    <result column="quality" property="quality" jdbcType="VARCHAR" />
+    <result column="inventory" property="inventory" jdbcType="DOUBLE" />
+    <result column="thickness" property="thickness" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="BIT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
 </mapper>
