@@ -38,7 +38,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
-  type-aliases-package: com.leftsuper.model
+  type-aliases-package: com.huafengodel
 
 #pagehelper分页插件
 pagehelper:

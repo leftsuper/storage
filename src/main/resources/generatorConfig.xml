@@ -41,7 +41,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.leftsuper.model"
+        <javaModelGenerator targetPackage="com.huafeng.model"
                             targetProject="src/main/java">
             <!-- 设置每个实体必须继承的根类
             <property name="rootClass" value=""/> -->
@@ -52,13 +52,13 @@
         <sqlMapGenerator targetPackage="mybatis"
                          targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="com.leftsuper.dao"
+        <javaClientGenerator targetPackage="com.huafeng.dao"
                              targetProject="src/main/java" type="XMLMAPPER">
             <!-- rootInterface: 用于指定一个所有生成的接口都继承的父接口
             <property name="rootInterface" value=""/> -->
         </javaClientGenerator>
         <!-- 生成所有表，如果指定生成某个表，就替换下面的% -->
-        <table tableName="%"></table>
+        <table tableName="goods"></table>
         <!--&lt;!&ndash;<generatedKey column="ID" sqlStatement="MySql"/>不再生成自增长ID&ndash;&gt;-->
 
     </context>

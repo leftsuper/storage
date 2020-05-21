@@ -9,39 +9,24 @@
     <meta http-equiv="description" content="出入库管理系统">
     <link rel="stylesheet" type="text/css" href="css/easyui.css" />
     <link rel="stylesheet" type="text/css" href="css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
-    <style>
-        body{
-        }
-        #header{
-            height: 200px;
-            background-color: #77beff;
-        }
-        #navigator{
-            width: 20%;
-        }
-        #section{
-        }
-        #footer{
-            height: 35px;
-            text-align: center;
-            font-size: 20px;
-        }
-    </style>
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body class="easyui-layout">
     <div id="header" data-options="region:'north'" ></div>
     <div id="navigator" data-options="region:'west'" title="导航栏">
-        <div id="sm" class="easyui-sidemenu" data-options="onSelect:open,data:[{'id':10100,'name':'storage','text':'仓储','iconCls':'icon-save','url':'','children':[{'id':10101,'name':'inventory','text':'库存','iconCls':'icon-shift','url':'/storage/inventory','parentId':10100}]},{'id':10200,'name':'sale','text':'销售','iconCls':'icon-grid','children':[{'id':10201,'name':'order','text':'订单','iconCls':'icon-application','url':'/sale/order','parentId':10200},{'id':10202,'name':'customer','text':'顾客','iconCls':'icon-user','url':'/sale/customer','parentId':10200}]},{'id':10300,'name':'statistics','text':'统计','iconCls':'icon-chart'}]" style="width: 100%"></div>
-        <script type="text/javascript">
-            function open(item){
-                alert(item.url)
-            }
-        </script>
+        <div id="menu" class="easyui-sidemenu" data-options="onSelect:open,data:${navigators}" style="width: 100%"></div>
     </div>
-    <div id="section" data-options="region:'center'"></div>
+    <div id="section" data-options="region:'center'">
+        <div id="tabs" class="easyui-tabs" data-options="tools:'#tab-tools'" >
+            <div id="begin" title="开始" data-options="closable:true">
+                <span id="begin-text">欢迎使用华丰仓销管理系统</span>
+            </div>
+        </div>
+    </div>
     <div id="footer" data-options="region:'south'">
         Copyright © 2004-2020  华丰塑业版权所有
     </div>

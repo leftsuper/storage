@@ -94,15 +94,34 @@
 .icon-large-chart{
 	background:url('icons/large_chart.png') no-repeat center center;
 }
+
 /* 自定义 */
 .icon-storage{
 	background:url('icons/brick.png') no-repeat center center;
+}
+.icon-storage-add{
+	background:url('icons/brick_add.png') no-repeat center center;
+}
+.icon-storage-edit{
+	background:url('icons/brick_edit.png') no-repeat center center;
+}
+.icon-storage-delete{
+	background:url('icons/brick_delete.png') no-repeat center center;
 }
 .icon-shift{
 	background: url("icons/shift.png") no-repeat center center;
 }
 .icon-user{
 	background:url('icons/user.png') no-repeat center center;
+}
+.icon-user-add{
+	background:url('icons/user_add.png') no-repeat center center;
+}
+.icon-user-edit{
+	background:url('icons/user_edit.png') no-repeat center center;
+}
+.icon-user-delete{
+	background:url('icons/user_delete.png') no-repeat center center;
 }
 .icon-application{
 	background:url('icons/application.png') no-repeat center center;
